@@ -1,21 +1,62 @@
 'use strict';
+
+
 function solution(prices) {
-  let result = prices.map((price, index) => {
-    const exceptList = prices.filter((_, index2) => index < index2 )
-    let maxNumber2 = 0;
+  let maxNumber = 0;
 
-    exceptList.forEach((num) => {
-      if ((num - price) > maxNumber2) {
-        maxNumber2 = num - price
-      }
-    });
+  let max = Math.max(...prices)
+  let min = Math.min(...prices)
+  let maxIndex = prices.lastIndexOf(max); 
+  let minIndex = prices.indexOf(min) 
 
-    return maxNumber2;
-  });
-  let max = Math.max(...result);
+  if (minIndex < maxIndex) {
+    maxNumber = max - min;
+  }
+  console.log(' maxNumber = ', maxNumber);
 
-  return (max < 0) ? 0 : max;
+  // prices.forEach((today, todayIndex) => {
+  //   for (let i = todayIndex + 1; i < prices.length; i++) {
+  //     const minus = prices[i] - today
+  //     if (minus > maxNumber) {
+  //       maxNumber = minus
+  //     }
+  //   }
+  //   // prices.forEach((future, futureIndex) => {
+  //   //   console.log('forEach', futureIndex, ' = ', future);
+  //   //   if ((futureIndex > todayIndex) && (future - today) > maxNumber) {
+  //   //     maxNumber = future - today
+  //   //   }
+  //   // });
+  // });
+
+  return maxNumber;
 };
 
-// console.log('solution() = ', solution([ 3, 5, 1, 5, 1, 4]));
-console.log('solution = ', solution([5, 4, 3, 2, 1]))
+console.log('solution() = ', solution([3, 5, 1, 5, 1, 4, 10000]));
+// console.log('solution = ', solution([5, 4, 3, 2, 1]))
+
+function solution2(prices) {
+  
+  let minusResult = prices.map((priceNum, priceNumIndex) => {
+    prices.forEach((num, numIndex) => {
+      console.log('priceNum = ', priceNum);
+      console.log(' num = ', num);
+      let minus = 0;
+      if (priceNumIndex < numIndex) {
+        minus = num - priceNum
+      } else {
+        minus = 0;
+      }
+
+      console.log('minus = ', minus);
+      console.log(' ----------- ' );
+      
+      return [];
+    })
+    
+  })
+  
+  return ;
+};
+
+// console.log('solution2 = ', solution2([5, 4, 3, 2, 0]))
