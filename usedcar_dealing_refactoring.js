@@ -6,37 +6,42 @@ function solution(prices) {
   const min = Math.min(...prices)
   const maxIndex = prices.lastIndexOf(max); 
   const minIndex = prices.indexOf(min) 
+  let x = 100000;
 
   if (minIndex < maxIndex) {
     maxNumber = max - min;
-    console.log('여기 탔음 = ');
   } else {
     prices.forEach((today, todayIndex) => {
-      for (let i = todayIndex + 1; i < prices.length; i++) {
-        const minus = prices[i] - today
-        if (minus > maxNumber) {
-          maxNumber = minus
+      if (today < x) {
+        x = today;
+        for (let i = todayIndex + 1; i < prices.length; i++) {
+          const minus = prices[i] - today
+          if (minus > maxNumber) {
+            maxNumber = minus
+          }
         }
       }
     });
   }
-  console.log(' maxNumber = ', maxNumber);
-
   return maxNumber;
 };
 
 function solution2(prices) {
-  let maxNumber = 0;
-
-  prices.forEach((today, todayIndex) => {
-    for (let i = todayIndex + 1; i < prices.length; i++) {
-      const minus = prices[i] - today
-      if (minus > maxNumber) {
-        maxNumber = minus
-      }
-    }
+  
+  let result = prices.map((price, index) => {
+    const exceptList = prices.filter((value, index2) => value != price && index < index2 )
+    const semiResultList = exceptList.map((num, numberIndex) => {
+      return num - price;
+    });
+    const maxNumber = Math.max(...semiResultList);
+    return maxNumber;
   });
-  return maxNumber;
+  let finalMaxNumber = Math.max(...result)
+  
+  if (finalMaxNumber < 0) {
+    finalMaxNumber = 0
+  }
+  return finalMaxNumber;
 };
 
 const getRandomInt = (min, max) =>  Math.floor(Math.random() * (max - min) + min); 
@@ -60,8 +65,8 @@ const test = (count) => {
     const bbb = solution2(testPrices);
     const studentEndTime = performance.now()
     const totalStudentTime = studentEndTime - studentStartTime
+
     console.log(' totalStudentTime = ', totalStudentTime);
-    
     if (aaa === bbb) {
       console.log('예상 답은' ,aaa, '그리고 당신의 답은', bbb, '정답  = ');
     } else {
