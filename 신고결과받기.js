@@ -12,7 +12,7 @@ function solution(id_list, report, k) {
     console.log(' eachMemberList = ', eachMemberList );
     // console.log(' eachMemberList = ', eachMemberList );
     reportedMembersArray.push(eachMemberList[1]);
-    
+
     
     //중복된거 있으면 하나로 합치자.
     
@@ -61,6 +61,7 @@ function solution(id_list, report, k) {
   })
   console.log('totalResult = ', totalResult);
   console.log('result = ', result);
+  console.log('aaa = ', );
 
   //muzi가 신고한 사람들이 stopMember에 있는지, 있으면 몇명있는지를 알아야 하고 그걸 리턴할거임.
   
