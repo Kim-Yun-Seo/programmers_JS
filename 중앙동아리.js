@@ -1,4 +1,12 @@
 'use strict'
+//중앙동아리 문제 = return은 숫자(중앙동아리 개수)
+//1. 중앙동아리의 조건 부합 여부를 확인하기 위해 데이터가 있어야함.
+//1-1. 1을 찾기 위해 동아리이름으로 묶인 obj가 있어야함.
+//1-2. 1-1에는 겹치는 애들(예: 19학번)이 없어야함
+//1-3. 학번으로 묶인 obj가 있어야 1-1을 확인 할 수 있음.
+//2. 중앙동아리 조건 부합 여부를 확인해야함.
+//2-1. 1-1로 만든 데이터로 알 수 있음. (배열의 length를 이용)
+//2-2. 숫자값을 올리면서 return.
 
 function solution(test) {
   const students = test.numbers;
@@ -55,8 +63,6 @@ function solution(test) {
 
   return result;
 }
-
-
 
 const test1 = {
   numbers: [

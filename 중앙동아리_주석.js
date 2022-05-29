@@ -6,9 +6,9 @@ function solution(test) {
   const m = test.m;
   const k = test.k;
   let result = 0;
-
   //동아리 별로 사람들 쪼개고
   //obj 만들어야 되고 
+
   const clubObj = {
     // 동아리: {
     //   id: [],
@@ -21,10 +21,6 @@ function solution(test) {
     //   동아리 : [AAA, BBB],
     // }
   }
-  //memberObj[id] = {
-  //club : [club, club] 
-  //}
-
   students.forEach((student, index) => {
     const id = student.split(' ')[0]
     const department = student.split(' ')[1]
@@ -94,7 +90,6 @@ function solution(test) {
       console.log('dkdfs = ', );
     }
   })
-  
   
   return result;
 }
