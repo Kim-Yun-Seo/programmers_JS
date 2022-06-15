@@ -24,3 +24,6 @@ console.log('solution = ', solution("one2131231239oneoneoneoneone"));
 console.log('solution = ', solution("oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone "));
 console.log('solution = ', solution("123"));
 console.log('solution = ', solution("oneoneoneone"));
+
+//회고
+//구글링 하는 능력을 좀 키울 필요가 있음

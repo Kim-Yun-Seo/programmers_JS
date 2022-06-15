@@ -71,3 +71,10 @@ function solution(id_list, report, k) {
 
 // console.log('solution = ', solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2));
 console.log('solution = ', solution(["con", "ryan"],["ryan con", "ryan con", "ryan con", "ryan con"],3));
+
+//회고
+// 멤버 데이터를 만들때 obj로 접근할 생각을 못했음
+// 데이터를 만들 때 핵심이 뭔지 를 파악해야함
+// result를 만들어 놓고 시작.
+// 예쁘게 만들걸 생각하지 말고 일단 완성부터 하고 고치기
+// 주석문 주어 목적어 잘 넣어서 적기

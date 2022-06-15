@@ -47,14 +47,12 @@ function solution(record) {
     const split = situation.split(' ');
     const action = split[0];
     const id = split[1];
+    const print = `${userObj[id]}님이 ${actionObj[action].print}`;
     
-    const print = `${userObj[id]}님이 ${actionObj[action].print}`
     if (actionObj[action].isDisplay) {
       answer.push(print);
     }
   });
-
-
   console.log('userObj = ', userObj);
 
   return answer;
@@ -67,7 +65,6 @@ const record = [
   "Enter uid1234 Prodo", 
   "Change uid4567 Ryan" 
 ];
-
 const record1 = [
   "Enter uid1234 Muzi", 
   "Enter uid4567 Prodo", 
@@ -84,7 +81,6 @@ console.log('solution = ', solution(record),
   "Prodo님이 나갔습니다.", 
   "Prodo님이 들어왔습니다."
 ]`);
-
 console.log('solution = ', solution(record1), 
 `[
   "Prodo님이 들어왔습니다.", 
@@ -92,3 +88,13 @@ console.log('solution = ', solution(record1),
   "Prodo님이 나갔습니다.", 
   "Prodo님이 들어왔습니다."
 ]`);
+
+//회고
+//입력값이랑 출력값이랑 비교해서 뭐가 다른지, 다른 이유가 뭔지를 캐치하는게 중요함
+//위에서 캐치한 것이 코딩의 핵심이 될 수 있음.
+//내가 만들고자 하는 데이터가 있다면 그 틀을 다 잡아놓고 만들기.
+//가지고 있는 데이터를 최대한으로 활용하기
+//오타 줄이기
+//확신이 없으면 아는 것이 아님.
+//주석 적는 시간 줄이기
+//주석은 한문장에 하나의 액션만 담기게하기
